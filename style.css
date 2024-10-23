@@ -1,0 +1,250 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap'); */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;        
+}
+
+body {
+    font-family: 'Poppins', sans-serif;    
+    display: grid;    
+    grid-template-areas:
+        "header"
+        "nav"
+        "section"
+        "aside"
+        "footer";
+    grid-template-columns: minmax(0, 25%) minmax(0, 50%) minmax(0, 25%);;
+    grid-template-rows: auto;
+    gap: 10px;        
+    /* padding: 10px; */
+}
+
+header {
+    grid-area: header;
+    background-color: #E78F81;    
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+
+header img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+header h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+    text-shadow: 
+        2px 2px 0 white, 
+        -2px -2px 0 white,
+        2px -2px 0 white,
+        -2px 2px 0 white;   
+}
+
+nav {
+    grid-area: nav;
+    background-color: #FFCFB3;
+    border: 1px solid #e7c5bf;
+    /* padding: 20px;      */
+}
+
+/* nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    margin-bottom: 10px;
+    font-size: 0.8rem;  
+}
+
+nav ul li label {
+    font-weight: bold;
+    cursor: pointer;
+    color: #000;
+    text-decoration: none;
+} */
+
+nav a{
+    text-decoration: none;
+}
+
+nav h4 {    
+    color: black;
+    /* padding-left: 10px; */
+    font-size: 14px;
+}
+
+nav .icon {    
+    /* display: flex; */
+    /* align-items: center; */
+    padding: 15px 15px;
+    margin-left: -16px;
+}
+
+nav .icon:hover {
+    background-color: #fde0c4;
+    border-left: 6px solid #E78F81;
+    transition: 150ms ease-in-out;    
+}
+
+section {
+    grid-area: section;
+    background-color: #FFF5CD;
+    padding: 20px;
+    border: 1px solid #ebe3c3;
+    min-height: 399px;    
+    position: relative;  
+    font-size: 0.8rem;      
+}
+
+section input {
+    display: none;
+}
+
+section .content {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 20px;    
+}
+
+.h2sec{
+    font-family: "Sacramento", cursive;
+    font-size: 2.2rem;
+}
+
+input:checked + .content {
+    display: block;
+}
+
+aside {
+    grid-area: aside;
+    background-color: #fde0c4;
+    padding: 20px;
+    border: 1px solid #e7c5bf;
+    font-size: 0.8rem;  
+}
+
+footer {
+    grid-area: footer;
+    background-color: #E78F81;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* font-size: 12px;     */
+    font-size: 0.63rem;
+    font-weight: bold;
+}
+
+.footer-left {
+    text-align: left;
+    flex-basis: 33%;
+}
+
+.footer-center {
+    text-align: center;
+    flex-basis: 33%;
+}
+
+.footer-right {
+    text-align: right;
+    flex-basis: 33%;
+}
+
+.footer-left p {
+    text-align: left;
+    margin: 0; /* Menghilangkan margin default */
+    margin-bottom: 10px; /* Tambahkan jarak di bawah */
+}
+
+.footer-right p {
+    margin: 0;
+    margin-top: 20px; /* Jarak di atas */
+    margin-bottom: 10px; /* Jarak di bawah */
+}
+
+.footer-right small {
+    font-size: 12px;
+    display: block;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Tablet Portrait dan Smart phone */
+@media (max-width: 768px) {
+    body {
+        grid-template-areas:
+            "header"
+            "nav"
+            "section"
+            "aside"
+            "footer";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        height: 100vh;
+    }
+
+    nav {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    section, aside, footer {
+        width: 100%;
+    }
+}
+
+/* Tablet Landscape */
+@media (min-width: 769px) and (max-width: 1024px) {
+    body {
+        grid-template-areas:
+            "header header header"
+            "nav section section"
+            "aside aside aside"
+            "footer footer footer";
+        grid-template-columns: 25% 75%;
+        grid-template-rows: auto;
+        height: 100vh;
+    }
+
+    nav {
+        padding-left: 15px;
+    }
+
+    footer {
+        flex-direction: row;
+    }
+}
+
+/* Desktop Layout */
+@media (min-width: 1025px) {
+    body {
+        grid-template-areas:
+            "header header header"
+            "nav section aside"
+            "footer footer footer";
+        /* grid-template-columns: 25% 50% 25%; */
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-rows: auto;
+    }
+
+    nav {
+        padding-left: 15px;
+    }
+
+    footer {
+        flex-direction: row;
+    }
+}
